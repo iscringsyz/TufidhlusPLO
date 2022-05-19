@@ -31,22 +31,6 @@ def fib3(num):
     """生成器"""
     a, b = 0, 1
     for _ in range(num):
-        a, b = b, a + b
-        yield a
-
-
-# 动态规划 - 保存可能进行重复运算的中间结果（空间换时间）
-def fib(num, results={}):
-    """斐波拉切数"""
-    assert num > 0
-    if num in (1, 2):
-        return 1
-    try:
-        return results[num]
-    except KeyError:
-        results[num] = fib(num - 1) + fib(num - 2)
-        return results[num]
-
 
 @contextmanager
 def timer():
